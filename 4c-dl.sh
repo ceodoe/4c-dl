@@ -28,6 +28,7 @@ mkdir -p "$downloadPath" && cd "$downloadPath" || exit
 wget -r -np -nH -nd -nc -e robots=off -A "jpg,jpeg,png,webp,gif,webm,mp4,mp3,m4a" -R "*s.jpg,*s.jpeg,*s.png,*s.webp,4chan-icon-*.png" --regex-type pcre --reject-regex="[A-Fa-f0-9]{40}\.(?:gif|png|jpg|jpeg|webp)$" -H -q --show-progress "$threadURL"
 
 if [ -f "$downloadPath/archived.gif" ]; then
+    rm "$downloadPath/archived.gif"
     exit 1 # Thread archived, exit 1, 4c-dl-mon picks this up and echoes appropriately
 else
     exit 0 # wget always returns 8 because it tries to follow links that return 403, there is no way to stop it from doing so
