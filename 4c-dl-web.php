@@ -29,5 +29,6 @@ if(isset($url) && isset($user) && isset($pw)) {
         print("OK<br /><br /><a href='#' onclick='window.close()'>Close</a>");
     }
 } else {
+    http_response_code(400);
     print("Malformed request<br /><br /><a href='#' onclick='window.close()'>Close</a>");
 }
