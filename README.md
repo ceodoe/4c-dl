@@ -449,4 +449,4 @@ Feel free to submit issues or pull requests. Please note that since this is mean
 
 ## Acknowledgements
 * [4down](https://github.com/Cipher66hz/4Down) - *4c-dl* started as a modification of *4down*, but ended up being rewritten from scratch. The only thing partially remaining from *4down* is the *wget* command-line used in *4c-dl*, although that has also been improved
-* youtube-dl / [yt-dlp](https://github.com/Cipher66hz/4Down) - Provided inspiration for the name
+* youtube-dl / [yt-dlp](https://github.com/yt-dlp/yt-dlp) - Provided inspiration for the name
