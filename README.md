@@ -1,12 +1,12 @@
 # 4c-dl
 
-Download and monitor the content of 4chan threads.
+Download and monitor media content from 4chan threads.
 
 This project has three components:
 
-* `4c-dl` - Download a thread
-* `4c-dl-mon` - Monitor a thread
-* `4c-dl-web` - Remotely download a thread
+* `4c-dl` - Download all media from a thread
+* `4c-dl-mon` - Monitor a thread (automatically download new media until thread dies)
+* `4c-dl-web` - Remotely download all media from a thread
 
 ## How to use
 
