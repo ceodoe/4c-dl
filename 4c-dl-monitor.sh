@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
+#
+# 4c-dl-mon - Monitor a 4chan thread (automatically download new media until thread dies)
+#
+# Exit codes:
+#   0 - All is well
+#   1 - Fatal error, invalid or no URL given
+#   2 - Already monitoring this thread in another instance
+#   4 - Received a 403 HTTP response from the server
+#
+
 set -o pipefail
 appName=$(basename "${0%'.'*}")
 threadURL="$1"
@@ -60,7 +70,7 @@ for i in $(seq 0 "$numInstances"); do
     if [[ "$currentInstance" == "$threadURL" ]]; then
         printf "This thread is already being monitored by another instance of %s:\n" "$appName"
         printInstances "$threadURL"
-        exit 16
+        exit 2
     fi
 done
 
@@ -82,11 +92,11 @@ while true; do
     case $status in
         404)
             echo "404 Not Found, exiting."
-            exit 0 # Exit with no error, 404/being archived is the natural end state of all 4chan threads
+            exit 0 # Exit with no error, 404 is the natural end state of all 4chan threads
             ;;
         403)
             echo "403 Forbidden, are we blocked? Exiting."
-            exit 1
+            exit 4
             ;;
         500)
             echo "500 Internal Server Error, site offline?"
@@ -107,7 +117,7 @@ while true; do
     esac
 
     # Exit with no error if thread is archived
-    if [ "$innerResponse" -eq 1  ]; then
+    if [ "$innerResponse" -eq 2  ]; then
         echo "Thread has been archived and will receive no further posts. Exiting."
         exit 0
     fi

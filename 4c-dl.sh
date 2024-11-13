@@ -1,4 +1,13 @@
 #!/usr/bin/env bash
+#
+# 4c-dl - Download all media from a 4chan thread
+#
+# Exit codes:
+#   0 - All is well
+#   1 - Fatal error, invalid or no URL given
+#   2 - Thread has been archived
+#
+
 set -o pipefail
 downloadRoot="$HOME/Downloads/.lewds"
 threadURL="$1"
@@ -29,7 +38,7 @@ wget -r -np -nH -nd -nc -e robots=off -A "jpg,jpeg,png,webp,gif,webm,mp4,mp3,m4a
 
 if [ -f "$downloadPath/archived.gif" ]; then
     rm "$downloadPath/archived.gif"
-    exit 1 # Thread archived, exit 1, 4c-dl-mon picks this up and echoes appropriately
+    exit 2 # Thread archived, exit 2, 4c-dl-mon picks this up and echoes appropriately
 else
     exit 0 # wget always returns 8 because it tries to follow links that return 403, there is no way to stop it from doing so
 fi
