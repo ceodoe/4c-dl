@@ -18,8 +18,7 @@ You need a UNIX-like environment that can run Bash:
 
 You need to make the Bash scripts executable before trying to run them:
 
-* `chmod +x 4c-dl.sh`
-* `chmod +x 4c-dl-mon.sh`
+* `chmod +x 4c-dl*.sh`
 
 ### 4c-dl
 
@@ -447,3 +446,7 @@ Feel free to submit issues or pull requests. Please note that since this is mean
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+## Acknowledgements
+* [4down](https://github.com/Cipher66hz/4Down) - *4c-dl* started as a modification of *4down*, but ended up being rewritten from scratch. The only thing partially remaining from *4down* is the *wget* command-line used in *4c-dl*, although that has also been improved
+* youtube-dl / [yt-dlp](https://github.com/Cipher66hz/4Down) - Provided inspiration for the name
