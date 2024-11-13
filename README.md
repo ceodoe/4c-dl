@@ -10,6 +10,12 @@ This project has three components:
 
 ## How to use
 
+You need a UNIX-like environment that can run Bash:
+
+* Any modern Linux distribution
+* macOS
+* Windows with [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+
 You need to make the Bash scripts executable before trying to run them:
 
 * `chmod +x 4c-dl.sh`
