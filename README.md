@@ -29,7 +29,7 @@ Usage:
 
     ./4c-dl.sh <url>
 
-`<url>` is a full link to a 4chan thread.
+`<url>` is a full URL to a 4chan thread.
 
 Open the script and change the value of the variable `downloadRoot` to set your download root. The default is `$HOME/Downloads/.lewds` ( ͡° ͜ʖ ͡°)
 
@@ -57,7 +57,7 @@ The script tries to be smart, and will check the HTTP response code of each thre
 
 ## 4c-dl-web
 
-*4c-dl-web* is a PHP script that calls *4c-dl*. This means you can send a URL from your phone (or any Web-capable device) to your computer running a Web server and have a thread downloaded.
+*4c-dl-web* is a PHP script that calls *4c-dl*. This means you can send a URL from your phone (or any Web-capable device) to your computer running a Web server with PHP, and have a thread downloaded.
 
 *4c-dl-web* is used by sending it an HTTP request:
 
@@ -65,10 +65,10 @@ The script tries to be smart, and will check the HTTP response code of each thre
 
 *4c-dl-web* supports both `GET` and `POST` requests, but only one at a time.
 
-* `<server>` is the IP or domain address of your web server
+* `<server>` is the domain or IP address of your web server
 * `<user>` is your username on the server
 * `<password>` is your password on the server
-* `<url>` is a [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding) URL to a 4chan thread to download
+* `<url>` is a [percent-encoded](https://en.wikipedia.org/wiki/Percent-encoding) URL to a 4chan thread to download
 
 Before using *4c-dl-web*, you need to edit line 2 of `4c-dl-web.php` and specify the location of *4c-dl* in the value of the `$scriptLoc` variable (default is `/opt/scripts/4c-dl.sh`).
 
@@ -94,7 +94,7 @@ Select the above line of text, then drag it to your bookmarks toolbar. You can t
 The reason *4c-dl-web* exists in the first place, is because I wanted to be able to just share a thread URL from my phone and have it get downloaded on my PC. This can be accomplished with an Android phone and a few apps:
 
 * [Readchan](https://play.google.com/store/apps/details?id=com.deezus.pchan&hl=en-US) - A great 4chan reader app (you can also just use a Web browser)
-* [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&hl=en-US) - Automation framework or Android
+* [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&hl=en-US) - Automation framework for Android
 * [AutoShare](https://play.google.com/store/apps/details?id=com.joaomgcd.autoshare&hl=en-US) - Tasker plugin that provides a share target
 
 Note that Tasker and AutoShare cost money, but they are cheap and well worth it if you enjoy automation. They are also both useful for lots more than just downloading 4chan threads.
