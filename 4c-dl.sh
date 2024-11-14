@@ -34,7 +34,7 @@ mkdir -p "$downloadPath" && cd "$downloadPath" || exit
 #  -A accepts all images, videos and audio
 #  -R rejects all thumbnails and favicons
 #  --reject-regex makes sure we reject the banner images
-wget -r -np -nH -nd -nc -e robots=off -A "jpg,jpeg,png,webp,gif,webm,mp4,mp3,m4a" -R "*s.jpg,*s.jpeg,*s.png,*s.webp,4chan-icon-*.png" --regex-type pcre --reject-regex="[A-Fa-f0-9]{40}\.(?:gif|png|jpg|jpeg|webp)$" -H -q --show-progress "$threadURL"
+wget -w 5 --random-wait -r -np -nH -nd -nc -e robots=off -A "jpg,jpeg,png,webp,gif,webm,mp4,mp3,m4a" -R "*s.jpg,*s.jpeg,*s.png,*s.webp,4chan-icon-*.png" --regex-type pcre --reject-regex="[A-Fa-f0-9]{40}\.(?:gif|png|jpg|jpeg|webp)$" -H -q --show-progress "$threadURL"
 
 if [ -f "$downloadPath/archived.gif" ]; then
     rm "$downloadPath/archived.gif"
