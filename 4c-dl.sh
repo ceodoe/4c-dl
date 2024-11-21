@@ -29,6 +29,7 @@ threadNumber=$(echo "$threadURL" | grep -ioP "^https\:\/\/boards\.(?:4chan|4chan
 downloadPath="$downloadRoot/$boardName/$threadNumber"
 
 mkdir -p "$downloadPath" && cd "$downloadPath" || exit
+echo "Downloading to $downloadPath"
 
 # Explanation of the following wget command:
 #  -A accepts all images, videos and audio
